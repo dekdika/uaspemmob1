@@ -3,6 +3,8 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:uaspemob1/Login.dart';
 import 'package:uaspemob1/changepassword.dart';
 import 'package:uaspemob1/forgetPassword.dart';
+import 'package:uaspemob1/main.dart';
+import 'package:uaspemob1/tambah_berita.dart';
 
 class dashboard extends StatefulWidget {
   const dashboard({Key? key}) : super(key: key);
@@ -13,7 +15,7 @@ class dashboard extends StatefulWidget {
 
 class _dashboardState extends State<dashboard> {
   int _currentIndex = 0;
-  List _pages = [LoginPage(), Changepassword(), ForgetPassword()];
+  List _pages = [DashboardPage(), tambah_berita(), ForgetPassword()];
   void tekan(int Index) {
     setState(() {
       _currentIndex = Index;

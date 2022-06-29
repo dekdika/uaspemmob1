@@ -1,14 +1,22 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:uaspemob1/home.dart';
-import 'package:uaspemob1/main.dart';
 import 'package:uaspemob1/register.dart';
 import 'package:uaspemob1/forgetpassword.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
-class LoginPage extends StatelessWidget {
+class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
 
   @override
+  State<LoginPage> createState() => _LoginPageState();
+}
+
+class _LoginPageState extends State<LoginPage> {
+  @override
+  TextEditingController email = TextEditingController();
+  TextEditingController password = TextEditingController();
   Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(
@@ -40,6 +48,7 @@ class LoginPage extends StatelessWidget {
                     constraints:
                         const BoxConstraints.tightFor(width: 300, height: 52),
                     child: TextField(
+                      controller: email,
                       decoration: InputDecoration(
                         filled: true,
                         fillColor: Color(0xFFBFBFBF),
@@ -62,6 +71,7 @@ class LoginPage extends StatelessWidget {
                     constraints:
                         const BoxConstraints.tightFor(width: 300, height: 52),
                     child: TextField(
+                      controller: password,
                       obscureText: true,
                       decoration: InputDecoration(
                         filled: true,
@@ -99,13 +109,11 @@ class LoginPage extends StatelessWidget {
                     constraints:
                         const BoxConstraints.tightFor(width: 300, height: 52),
                     child: ElevatedButton(
-                        onPressed: () {
+                        onPressed: () async {
                           Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => dashboard(),
-                            ),
-                          );
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => dashboard()));
                         },
                         child: Text(
                           "Login",

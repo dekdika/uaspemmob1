@@ -78,7 +78,14 @@ class Changepassword extends StatelessWidget {
                     constraints:
                         const BoxConstraints.tightFor(width: 300, height: 52),
                     child: ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => LoginPage(),
+                            ),
+                          );
+                        },
                         child: Text(
                           "Simpan",
                           style: GoogleFonts.dmSans(
