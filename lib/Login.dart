@@ -15,8 +15,8 @@ class LoginPage extends StatefulWidget {
 
 class _LoginPageState extends State<LoginPage> {
   @override
-  TextEditingController email = TextEditingController();
-  TextEditingController password = TextEditingController();
+  TextEditingController emailController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
   Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(
@@ -48,7 +48,7 @@ class _LoginPageState extends State<LoginPage> {
                     constraints:
                         const BoxConstraints.tightFor(width: 300, height: 52),
                     child: TextField(
-                      controller: email,
+                      controller: emailController,
                       decoration: InputDecoration(
                         filled: true,
                         fillColor: Color(0xFFBFBFBF),
@@ -71,7 +71,7 @@ class _LoginPageState extends State<LoginPage> {
                     constraints:
                         const BoxConstraints.tightFor(width: 300, height: 52),
                     child: TextField(
-                      controller: password,
+                      controller: passwordController,
                       obscureText: true,
                       decoration: InputDecoration(
                         filled: true,
@@ -110,10 +110,27 @@ class _LoginPageState extends State<LoginPage> {
                         const BoxConstraints.tightFor(width: 300, height: 52),
                     child: ElevatedButton(
                         onPressed: () async {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => dashboard()));
+                          setState(() {});
+                          try {
+                            WidgetsFlutterBinding.ensureInitialized();
+                            Firebase.initializeApp();
+                            final auth = FirebaseAuth.instance;
+                            final newUser = auth.signInWithEmailAndPassword(
+                                email: emailController.text,
+                                password: passwordController.text);
+
+                            if (newUser != null) {
+                              print("suksess");
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => dashboard(),
+                                ),
+                              );
+                            }
+                          } catch (e) {
+                            print(e);
+                          }
                         },
                         child: Text(
                           "Login",

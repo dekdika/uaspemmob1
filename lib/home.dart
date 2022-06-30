@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:uaspemob1/Login.dart';
 import 'package:uaspemob1/changepassword.dart';
-import 'package:uaspemob1/forgetPassword.dart';
+// import 'package:uaspemob1/forgetPassword.dart';
+import 'package:uaspemob1/profil.dart';
 import 'package:uaspemob1/main.dart';
 import 'package:uaspemob1/tambah_berita.dart';
 
@@ -15,7 +16,7 @@ class dashboard extends StatefulWidget {
 
 class _dashboardState extends State<dashboard> {
   int _currentIndex = 0;
-  List _pages = [DashboardPage(), tambah_berita(), ForgetPassword()];
+  List _pages = [DashboardPage(), tambah_berita(), profil()];
   void tekan(int Index) {
     setState(() {
       _currentIndex = Index;

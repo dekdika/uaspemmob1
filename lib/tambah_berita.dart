@@ -14,46 +14,52 @@ class _tambah_beritaState extends State<tambah_berita> {
   @override
   Widget build(BuildContext context) {
     return (Scaffold(
+      appBar: AppBar(
+        centerTitle: true,
+        toolbarHeight: 100,
+        backgroundColor: Colors.white,
+        automaticallyImplyLeading: false, // Don't show the leading button
+        title: Row(
+          children: [
+            Container(
+              decoration: BoxDecoration(
+                color: Color(0xFF7FD3FA),
+                borderRadius: BorderRadius.circular(100),
+              ),
+              child: Image.asset("asset/img/Logo2.png"),
+              width: 50,
+              height: 50,
+            ),
+            Container(
+              margin: EdgeInsets.only(left: 20),
+              width: 300,
+              child: TextField(
+                decoration: InputDecoration(
+                  suffixIcon: Icon(Icons.search),
+                  filled: true,
+                  fillColor: Color(0xFFBFBFBF),
+                  hintText: "Name",
+                  focusedBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: Color(0xFFFFFBE9)),
+                    borderRadius: BorderRadius.circular(25.7),
+                  ),
+                  enabledBorder: UnderlineInputBorder(
+                    borderSide: BorderSide(color: Color(0xFFFFFBE9)),
+                    borderRadius: BorderRadius.circular(25.7),
+                  ),
+                ),
+              ),
+            )
+          ],
+        ),
+        // leading: Image.asset("asset/img/Logo2.png"),
+      ),
       body: Container(
         child: SingleChildScrollView(
           child: Container(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Row(
-                  children: [
-                    Container(
-                      margin: EdgeInsets.only(left: 20, top: 40),
-                      decoration: BoxDecoration(
-                        color: Color(0xFF7FD3FA),
-                        borderRadius: BorderRadius.circular(100),
-                      ),
-                      child: Image.asset("asset/img/Logo2.png"),
-                      width: 50,
-                      height: 50,
-                    ),
-                    Container(
-                      margin: EdgeInsets.only(left: 20, top: 50, right: 10),
-                      width: 300,
-                      child: TextField(
-                        decoration: InputDecoration(
-                          suffixIcon: Icon(Icons.search),
-                          filled: true,
-                          fillColor: Color(0xFFBFBFBF),
-                          hintText: "Name",
-                          focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color: Color(0xFFFFFBE9)),
-                            borderRadius: BorderRadius.circular(25.7),
-                          ),
-                          enabledBorder: UnderlineInputBorder(
-                            borderSide: BorderSide(color: Color(0xFFFFFBE9)),
-                            borderRadius: BorderRadius.circular(25.7),
-                          ),
-                        ),
-                      ),
-                    )
-                  ],
-                ),
                 SingleChildScrollView(
                   padding: EdgeInsets.all(20),
                   child: Card(

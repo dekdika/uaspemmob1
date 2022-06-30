@@ -1,11 +1,22 @@
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:uaspemob1/login.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 class RegisterPage extends StatelessWidget {
-  const RegisterPage({Key? key}) : super(key: key);
+  RegisterPage({Key? key}) : super(key: key);
+  late String username;
+  late String email;
+  late String password;
+  late String confirmPassword;
+
+  // final auth = FirebaseAuth.instance;
 
   @override
+
+  // TextEditingController username = TextEditingController();
   Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(
@@ -37,6 +48,9 @@ class RegisterPage extends StatelessWidget {
                     constraints:
                         const BoxConstraints.tightFor(width: 300, height: 52),
                     child: TextField(
+                      onChanged: (value) {
+                        username = value;
+                      },
                       decoration: InputDecoration(
                         filled: true,
                         fillColor: Color(0xFFBFBFBF),
@@ -59,6 +73,9 @@ class RegisterPage extends StatelessWidget {
                     constraints:
                         const BoxConstraints.tightFor(width: 300, height: 52),
                     child: TextField(
+                      onChanged: (value) {
+                        email = value;
+                      },
                       decoration: InputDecoration(
                         filled: true,
                         fillColor: Color(0xFFBFBFBF),
@@ -81,6 +98,9 @@ class RegisterPage extends StatelessWidget {
                     constraints:
                         const BoxConstraints.tightFor(width: 300, height: 52),
                     child: TextField(
+                      onChanged: (value) {
+                        password = value;
+                      },
                       obscureText: true,
                       decoration: InputDecoration(
                         filled: true,
@@ -104,6 +124,9 @@ class RegisterPage extends StatelessWidget {
                     constraints:
                         const BoxConstraints.tightFor(width: 300, height: 52),
                     child: TextField(
+                      onChanged: (value) {
+                        confirmPassword = value;
+                      },
                       obscureText: true,
                       decoration: InputDecoration(
                         filled: true,
@@ -127,12 +150,22 @@ class RegisterPage extends StatelessWidget {
                     constraints:
                         const BoxConstraints.tightFor(width: 300, height: 52),
                     child: ElevatedButton(
-                        onPressed: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => LoginPage()),
-                          );
+                        onPressed: () async {
+                          try {
+                            await Firebase.initializeApp();
+                            final auth = FirebaseAuth.instance;
+                            final newUser = auth.createUserWithEmailAndPassword(
+                                email: email, password: password);
+                            if (newUser != null) {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => LoginPage()),
+                              );
+                            }
+                          } catch (e) {
+                            print(e);
+                          }
                         },
                         child: Text(
                           "Sign Up",
