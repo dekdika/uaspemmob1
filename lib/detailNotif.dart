@@ -66,38 +66,35 @@ class _datailNotifState extends State<datailNotif> {
               Card(
                 elevation: 10.0,
                 child: ListTile(
-                    leading: IconButton(
-                      onPressed: () async {
-                        try {
-                          showAlertDialog(context);
-                          await FirebaseFirestore.instance
-                              .collection("berita")
-                              .where("judul",
-                                  isEqualTo:
-                                      dataList[index]["judul"].toString())
-                              .get()
-                              .then((value) {
-                            value.docs.forEach((element) {
-                              FirebaseFirestore.instance
-                                  .collection("berita")
-                                  .doc(element.id)
-                                  .delete()
-                                  .then((value) {
-                                print("Success!");
-                              });
+                  tileColor: Color(0xFF7FD3FA),
+                  leading: IconButton(
+                    onPressed: () async {
+                      try {
+                        showAlertDialog(context);
+                        await FirebaseFirestore.instance
+                            .collection("berita")
+                            .where("judul",
+                                isEqualTo: dataList[index]["judul"].toString())
+                            .get()
+                            .then((value) {
+                          value.docs.forEach((element) {
+                            FirebaseFirestore.instance
+                                .collection("berita")
+                                .doc(element.id)
+                                .delete()
+                                .then((value) {
+                              print("Success!");
                             });
                           });
-                        } catch (e) {}
-                        setState(() {});
-                      },
-                      icon: Icon(Icons.delete),
-                    ),
-                    title: Text(dataList[index]["judul"]),
-                    subtitle: Text(dataList[index]["judul"]),
-                    trailing: IconButton(
-                      icon: Icon(Icons.expand),
-                      onPressed: () {},
-                    )),
+                        });
+                      } catch (e) {}
+                      setState(() {});
+                    },
+                    icon: Icon(Icons.delete),
+                  ),
+                  title: Text(dataList[index]["judul"]),
+                  subtitle: Text(dataList[index]["foto"]),
+                ),
               )
             ],
           );

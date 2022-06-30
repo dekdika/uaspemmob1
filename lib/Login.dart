@@ -1,7 +1,8 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:uaspemob1/home.dart';
+import 'package:uaspemob1/bottom.dart';
+import 'package:uaspemob1/dashboard.dart';
 import 'package:uaspemob1/register.dart';
 import 'package:uaspemob1/forgetpassword.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -124,7 +125,7 @@ class _LoginPageState extends State<LoginPage> {
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) => dashboard(),
+                                  builder: (context) => bottom_navigation(),
                                 ),
                               );
                             }

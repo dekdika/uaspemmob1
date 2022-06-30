@@ -1,22 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:uaspemob1/Login.dart';
+import 'package:uaspemob1/berita.dart';
+
 import 'package:uaspemob1/changepassword.dart';
-// import 'package:uaspemob1/forgetPassword.dart';
+import 'package:uaspemob1/dashboard.dart';
+import 'package:uaspemob1/forgetPassword.dart';
 import 'package:uaspemob1/profil.dart';
 import 'package:uaspemob1/main.dart';
-import 'package:uaspemob1/tambah_berita.dart';
+import 'package:uaspemob1/dashboard.dart';
 
-class dashboard extends StatefulWidget {
-  const dashboard({Key? key}) : super(key: key);
+class bottom_navigation extends StatefulWidget {
+  const bottom_navigation({Key? key}) : super(key: key);
 
   @override
-  State<dashboard> createState() => _dashboardState();
+  State<bottom_navigation> createState() => _bottom_navigationState();
 }
 
-class _dashboardState extends State<dashboard> {
+class _bottom_navigationState extends State<bottom_navigation> {
   int _currentIndex = 0;
-  List _pages = [DashboardPage(), tambah_berita(), profil()];
+  List _pages = [dashboard(), berita(), edit_profil()];
   void tekan(int Index) {
     setState(() {
       _currentIndex = Index;

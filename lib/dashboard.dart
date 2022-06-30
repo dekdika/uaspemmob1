@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:uaspemob1/Login.dart';
 
-class tambah_berita extends StatefulWidget {
-  const tambah_berita({Key? key}) : super(key: key);
+class dashboard extends StatefulWidget {
+  const dashboard({Key? key}) : super(key: key);
 
   @override
-  State<tambah_berita> createState() => _tambah_beritaState();
+  State<dashboard> createState() => _dashboardState();
 }
 
-class _tambah_beritaState extends State<tambah_berita> {
+class _dashboardState extends State<dashboard> {
   TextEditingController searchController = TextEditingController();
   @override
   Widget build(BuildContext context) {
@@ -97,46 +97,7 @@ class _tambah_beritaState extends State<tambah_berita> {
                             // Container()
                           ]),
                         ),
-                        Row(
-                          children: [
-                            Container(
-                              padding: EdgeInsets.only(top: 20),
-                              child: ElevatedButton(
-                                child: const Text('Edit'),
-                                onPressed: () {},
-                                style: ElevatedButton.styleFrom(
-                                    side: BorderSide(
-                                      width: 2.0,
-                                      color: Colors.white,
-                                    ),
-                                    primary: Color(0xFF7ED2F9),
-                                    padding: const EdgeInsets.symmetric(
-                                        horizontal: 67, vertical: 20),
-                                    textStyle: const TextStyle(
-                                        fontSize: 30,
-                                        fontWeight: FontWeight.bold)),
-                              ),
-                            ),
-                            Container(
-                              padding: EdgeInsets.only(top: 20),
-                              child: ElevatedButton(
-                                child: const Text('Delete'),
-                                onPressed: () {},
-                                style: ElevatedButton.styleFrom(
-                                    side: BorderSide(
-                                      width: 2.0,
-                                      color: Colors.white,
-                                    ),
-                                    primary: Color(0xFF7ED2F9),
-                                    padding: const EdgeInsets.symmetric(
-                                        horizontal: 45, vertical: 20),
-                                    textStyle: const TextStyle(
-                                        fontSize: 30,
-                                        fontWeight: FontWeight.bold)),
-                              ),
-                            ),
-                          ],
-                        )
+                        //
                       ]),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
@@ -185,46 +146,6 @@ class _tambah_beritaState extends State<tambah_berita> {
                             // Container()
                           ]),
                         ),
-                        Row(
-                          children: [
-                            Container(
-                              padding: EdgeInsets.only(top: 20),
-                              child: ElevatedButton(
-                                child: const Text('Edit'),
-                                onPressed: () {},
-                                style: ElevatedButton.styleFrom(
-                                    side: BorderSide(
-                                      width: 2.0,
-                                      color: Colors.white,
-                                    ),
-                                    primary: Color(0xFF7ED2F9),
-                                    padding: const EdgeInsets.symmetric(
-                                        horizontal: 67, vertical: 20),
-                                    textStyle: const TextStyle(
-                                        fontSize: 30,
-                                        fontWeight: FontWeight.bold)),
-                              ),
-                            ),
-                            Container(
-                              padding: EdgeInsets.only(top: 20),
-                              child: ElevatedButton(
-                                child: const Text('Delete'),
-                                onPressed: () {},
-                                style: ElevatedButton.styleFrom(
-                                    side: BorderSide(
-                                      width: 2.0,
-                                      color: Colors.white,
-                                    ),
-                                    primary: Color(0xFF7ED2F9),
-                                    padding: const EdgeInsets.symmetric(
-                                        horizontal: 45, vertical: 20),
-                                    textStyle: const TextStyle(
-                                        fontSize: 30,
-                                        fontWeight: FontWeight.bold)),
-                              ),
-                            ),
-                          ],
-                        )
                       ]),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
@@ -273,46 +194,6 @@ class _tambah_beritaState extends State<tambah_berita> {
                             // Container()
                           ]),
                         ),
-                        Row(
-                          children: [
-                            Container(
-                              padding: EdgeInsets.only(top: 20),
-                              child: ElevatedButton(
-                                child: const Text('Edit'),
-                                onPressed: () {},
-                                style: ElevatedButton.styleFrom(
-                                    side: BorderSide(
-                                      width: 2.0,
-                                      color: Colors.white,
-                                    ),
-                                    primary: Color(0xFF7ED2F9),
-                                    padding: const EdgeInsets.symmetric(
-                                        horizontal: 67, vertical: 20),
-                                    textStyle: const TextStyle(
-                                        fontSize: 30,
-                                        fontWeight: FontWeight.bold)),
-                              ),
-                            ),
-                            Container(
-                              padding: EdgeInsets.only(top: 20),
-                              child: ElevatedButton(
-                                child: const Text('Delete'),
-                                onPressed: () {},
-                                style: ElevatedButton.styleFrom(
-                                    side: BorderSide(
-                                      width: 2.0,
-                                      color: Colors.white,
-                                    ),
-                                    primary: Color(0xFF7ED2F9),
-                                    padding: const EdgeInsets.symmetric(
-                                        horizontal: 45, vertical: 20),
-                                    textStyle: const TextStyle(
-                                        fontSize: 30,
-                                        fontWeight: FontWeight.bold)),
-                              ),
-                            ),
-                          ],
-                        )
                       ]),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
