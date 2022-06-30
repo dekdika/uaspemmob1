@@ -38,7 +38,7 @@ class _dashboardState extends State<dashboard> {
                   suffixIcon: Icon(Icons.search),
                   filled: true,
                   fillColor: Color(0xFFBFBFBF),
-                  hintText: "Name",
+                  hintText: "Mau Cari Kabar Apa",
                   focusedBorder: OutlineInputBorder(
                     borderSide: BorderSide(color: Color(0xFFFFFBE9)),
                     borderRadius: BorderRadius.circular(25.7),
